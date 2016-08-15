@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <base href="" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="author" content="UolCano">
+    <meta name="keywords" content="优质课程、智能问答、趣味实践、随心笔记、教育、网易公开课、计算机开发、交互视觉设计、视频教程、交流互动、免费、名师、实用、培训">
+    <meta name="description" content="网易教育产品部是大型在线教育平台。">
+    <meta name="robots" content="index">
+    <title>网易教育产品部 - 优秀的实用技能学习平台</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/json2.js"></script>
+    <script src="scripts/md5.min.js"></script>
+    <script src="scripts/core.js"></script>
+</head>
+
+<body>
+    <!-- course card template -->
+    <script class="js-template" type="text/template" data-template-name="card">
+        <div class="course--item" data-course-id="${track.id}" tabindex="0">
+            <div class="wrapper clearfix">
+                <div class="item--figure">
+                    <img src="${track.middlePhotoUrl}" alt="${track.name}" />
+                </div>
+                <div class="item--title">${track.name}</div>
+                <div class="item--category">${track.categoryName}</div>
+                <div class="item--learn-count"><i class="icon icon--human"></i>${track.learnerCount}</div>
+                <div class="item--price before">${track.price}</div>
+                <div class="item--provider">${track.provider}</div>
+                <div class="item--descript">${track.description}</div>
+            </div>
+        </div>
+    </script>
+    <!-- course hot rank template -->
+    <script class="js-template" type="text/template" data-template-name="rank">
+        <li class="hot-rank--item clearfix" tabindex="0">
+            <div class="item--figure"><img src="${track.smallPhotoUrl}" alt="${track.name}" /></div>
+            <div class="item--title">${track.name}</div>
+            <div class="item--learn-count"><i class="icon icon--human"></i>${track.learnerCount}</div>
+        </li>
+    </script>
+    <div class="container">
+        <!-- the top notification bar -->
+        <div class="top-bar">
+            <div class="block-center">
+                <span class="top-bar--message">网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href="#" class="top-bar--link link-green">立即查看</a></span>
+                <span class="top-bar--close js-cookie--close"><i class="icon icon--close-lti"></i>不再提醒</span>
+            </div>
+        </div>
+        <!-- the top navigation bar -->
+        <div class="nav-bar" role="banner">
+            <div class="block-center clearfix">
+                <!-- netease LOGO -->
+                <div class="nav-bar--logo logo">
+                    <span class="logo--abbr">EDU</span><span class="logo--sep"></span><span class="logo--zh-text">网易教育产品部</span>
+                </div>
+                <!-- the follow button -->
+                <div class="nav-bar--follow"><a href="login.html" class="tofollow js-cookie--follow" role="button"><i class="icon icon--follow"></i>关注</a><span class="followed"><span class="followed--text"><i class="icon icon--followed"></i>已关注</span><span class="followed--sep"></span><a class="followed--unfollow js-cookie--unfollow">取消</a></span><span class="follow--count js-text--count">45</span></div>
+                <!-- the search button -->
+                <div class="nav-bar--search"><i class="icon icon--search" tabindex="0"></i></div>
+                <!-- the sub-navigation list -->
+                <ul class="nav-bar--subnav" role="navigation">
+                    <li class="subnav-item opencourse"><a href="http://open.163.com/" title="网易公开课">网易公开课</a></li>
+                    <li class="subnav-item cloudclass"><a href="http://study.163.com/" title="云课堂">云课堂</a></li>
+                    <li class="subnav-item cnmooc"><a href="http://www.icourse163.org/" title="中国大学MOOC">中国大学MOOC</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- the carousel-->
+        <div class="carousel beyond-center">
+            <div class="outerwrapper">
+                <div class="centerwrapper innerwrapper">
+                    <div class="carousel--slides">
+                        <a href="http://open.163.com/" class="slide opencourse" title="网易公开课"><img src="images/bnr1.jpg" height="460" width="1652" alt="网易公开课" /></a>
+                        <a href="http://study.163.com/" class="slide cloudclass" title="云课堂"><img src="images/bnr2.jpg" height="460" width="1652" alt="云课堂" /></a>
+                        <a href="http://www.icourse163.org/" class="slide cnmooc" title="中国大学MOOC"><img src="images/bnr3.jpg" height="460" width="1652" alt="中国大学MOOC" /></a>
+                    </div>
+                    <div class="carousel--indicators">
+                        <i class="indicator active"></i><i class="indicator"></i><i class="indicator"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- three education products presentation -->
+        <div class="product-info">
+            <div class="block-center">
+                <div class="centerwrapper">
+                    <div class="product-info--item clearfix opencourse">
+                        <div class="product-info--icon"><i class="icon icon--opencourse"></i></div>
+                        <div class="product-info--descript">
+                            <h3 class="descript--title">网易公开课</h3>
+                            <p class="descript--content">推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
+                            <a href="http://open.163.com/" class="descript--more link-green">了解更多</a>
+                        </div>
+                    </div><!--
+                 --><div class="product-info--item clearfix cloudclass">
+                        <div class="product-info--icon"><i class="icon icon--cloudclass"></i></div>
+                        <div class="product-info--descript">
+                            <h3 class="descript--title">云课堂</h3>
+                            <p class="descript--content">网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。</p>
+                            <a href="http://study.163.com/" class="descript--more link-green">了解更多</a>
+                        </div>
+                    </div><!--
+                 --><div class="product-info--item clearfix cnmooc">
+                        <div class="product-info--icon"><i class="icon icon--cnmooc"></i></div>
+                        <div class="product-info--descript">
+                            <h3 class="descript--title">中国大学MOOC</h3>
+                            <p class="descript--content">是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
+                            <a href="http://www.icourse163.org/" class="descript--more link-green">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- working environment presentation -->
+        <div class="work-env beyond-center">
+            <div class="outerwrapper">
+                <div class="innerwrapper centerwrapper">
+                    <img src="images/we1.jpg" alt="tennis room" class="work-env--pic" />
+                    <img src="images/we2.jpg" alt="session" class="work-env--pic" />
+                    <img src="images/we3.jpg" alt="reading room" class="work-env--pic" />
+                    <img src="images/we4.jpg" alt="record video" class="work-env--pic" />
+                    <img src="images/we5.jpg" alt="snacks" class="work-env--pic" />
+                </div>
+            </div>
+        </div>
+        <!-- course information container -->
+        <div class="course--container" role="main">
+            <div class="block-center clearfix">
+                <div class="main-left">
+                    <div class="course--category clearfix">
+                        <div class="tab js-tab active" data-type="10" tabindex="0">产品设计</div>
+                        <div class="tab js-tab" data-type="20" tabindex="0">编程语言</div>
+                    </div>
+                    <!-- [end] course category tab selector -->
+                    <div class="course--list js-course--card clearfix"></div>
+                    <!-- [end] course list -->
+                    <div class="pager js-pager">
+                        <button class="pager--prev icon icon--prev"></button>
+                        <button class="pager--page active">1</button>
+                        <button class="pager--page">2</button>
+                        <button class="pager--page">3</button>
+                        <button class="pager--page">4</button>
+                        <button class="pager--page">5</button>
+                        <button class="pager--page">6</button>
+                        <button class="pager--page">7</button>
+                        <button class="pager--page">8</button>
+                        <button class="pager--next icon icon--next"></button>
+                    </div>
+                    <!-- [end] page selector -->
+                </div>
+                <!-- [edn] left course main zone -->
+                <!-- right side bar -->
+                <div class="side-right">
+                    <div class="org-intro">
+                        <div class="org-intro--title">机构介绍</div>
+                        <div class="org-intro--detail" tabindex="0">
+                            <div class="detail--title">观看下面的视频来了解吧：</div>
+                            <div class="detail--video js-video--open">
+                                <img src="images/poster_small.jpg" alt="orgnization introduction video" />
+                                <i class="icon icon--play-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [end] orgnization introduction -->
+                    <div class="hot-rank">
+                        <div class="hot-rank--title">最热排行</div>
+                        <div class="wrapper">
+                            <div class="clip">
+                                <ul class="hot-rank--list js-course--rank" tabindex="0"></ul>
+                                <!-- [end] hot course rank list -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [end] hot course rank -->
+                </div>
+            </div>
+        </div>
+        <!-- [end] course information container -->
+        <!-- the page footer -->
+        <div class="footer" role="contentinfo">
+            <div class="block-center">
+                <div class="wrapper clearfix">
+                    <div class="footer--comp-info">
+                        <!-- netease LOGO -->
+                        <div class="comp-logo logo">
+                            <span class="logo--abbr">EDU</span><span class="logo--sep"></span><span class="logo--zh-text">网易教育产品部</span>
+                        </div>
+                        <div class="comp-record">
+                            <p class="copyright">©2014 icourse163.org 浙ICP备08114786号-1</p>
+                            <p class="record">icourses.cn 京ICP备12020869号-2 京公网安备110102000459-2</p>
+                        </div>
+                    </div>
+                    <div class="footer--link">
+                        <span>友情链接：</span>
+                        <p><a href="http://open.163.com/">网易公开课</a></p>
+                        <p><a href="http://study.163.com/">网易云课堂</a></p>
+                        <p><a href="http://www.icourse163.org/">中国大学MOOC</a></p>
+                    </div>
+                    <div class="footer--contact">
+                        <span>我们：</span>
+                        <p>关于</p>
+                        <p>联系</p>
+                        <p>关注<i class="icon icon--weibo"></i></p>
+                    </div>
+                    <div class="footer--support">
+                        <span>更多：</span>
+                        <p>常见问题</p>
+                        <p>意见反馈</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-center about-page">
+                <div class="author">Writed by <a href="https://github.com/uolcano">uolcano</a></div>
+                <div class="credits">Credits to: jQuery Promise BEM</div>
+            </div>
+        </div>
+        <!-- login form -->
+        <div class="login js-login">
+            <div class="login--mask viewport-mask"></div>
+            <iframe name="nonrefresh" frameborder="0" style="display:none;"></iframe>
+            <form class="login--form js-form" name="flogin" action="http://study.163.com/webDev/login.htm" target="nonrefresh" autocomplete="off">
+                <fieldset class="form--field">
+                    <legend class="form--title">登录网易云课堂</legend>
+                    <div class="form--tips js-form--tips">错误/信息提示</div>
+                    <div class="form--account" title="帐号: studyOnline">
+                        <input type="text" class="form--text js-form--text" id="uname" name="userName" placeholder="帐号" value="studyOnline">
+                        <label for="uname" class="form--placeholder">帐号</label>
+                    </div>
+                    <div class="form--password" title="密码: study.163.com">
+                        <input type="password" class="form--text js-form--text" id="password" name="password" placeholder="密码" value="study.163.com">
+                        <label for="password" class="form--placeholder">密码</label>
+                    </div>
+                    <button type="submit" class="form--submit icon icon--submit js-form--submit">登录</button>
+                </fieldset>
+                <a class="login--close icon icon--close js-form--close"></a>
+            </form>
+        </div>
+        <div class="video js-video">
+            <div class="video--mask viewport-mask"></div>
+            <div class="video--window">
+                <div class="video--title">请观看下面视频</div>
+                <video class="video--primary" poster="images/poster_large.jpg">
+                    <a href="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4"><span class="ie-not-support">您的浏览器版本太低，不支持播放此视频，但是点击视频可以新建窗口观看</span><img src="images/poster_large.jpg" alt="机构介绍视频"></a>
+                </video>
+                <div class="video--controls">
+                    <div class="setting clearfix">
+                        <div class="play-btn play paused">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="time-pass">
+                            <span class="current">00:00</span>/<span class="duration">00:00</span>
+                        </div>
+                        <a class="brand" href="http://study.163.com/">
+                            <i class="icon icon--cloudclass-lti"></i><span>云课堂</span>
+                        </a>
+                        <div class="fullscreen">
+                            <div class="full-icon">
+                                <i class="corner"></i>
+                                <i class="corner"></i>
+                                <i class="corner"></i>
+                                <i class="corner"></i>
+                            </div>
+                        </div>
+                        <div class="resolution">标清</div>
+                        <div class="sound-control lowvoice">
+                            <div class="sound-bar draggable">
+                                <div class="volume">
+                                    <div class="pointer"></div>
+                                </div>
+                            </div>
+                            <div class="sound-icon">
+                                <div class="loudspeaker"></div>
+                                <div class="sound-wave1"></div>
+                                <div class="sound-wave2"></div>
+                            </div>
+                        </div>
+                        <div class="play-status">play status</div>
+                    </div>
+                    <div class="progress-bar draggable">
+                        <div class="cache"></div>
+                        <div class="progress">
+                            <div class="pointer"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="video--play icon icon--play-rect play paused"></button>
+                <button class="video--close icon icon--close"></button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

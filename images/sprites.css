@@ -1,0 +1,127 @@
+/* 237 x 186 x 24 */
+.login_button {
+  background-image: url("login button.png");
+  left: 1px;
+  top: 0px;
+  width: 295px;
+  height: 48px;
+}
+.pannel_background {
+  background-image: url("pannel background.png");
+  left: 1px;
+  top: 49px;
+  width: 295px;
+  height: 40px;
+}
+.cancel {
+  background-image: url("cancel.png");
+  left: 1px;
+  top: 90px;
+  width: 23px;
+  height: 22px;
+}
+.prev {
+  background-image: url("prev.png");
+  left: 25px;
+  top: 90px;
+  width: 30px;
+  height: 20px;
+}
+.next {
+  background-image: url("next.png");
+  left: 56px;
+  top: 90px;
+  width: 30px;
+  height: 20px;
+}
+.search_hover {
+  background-image: url("search hover.png");
+  left: 87px;
+  top: 90px;
+  width: 19px;
+  height: 19px;
+}
+.search {
+  background-image: url("search.png");
+  left: 107px;
+  top: 90px;
+  width: 19px;
+  height: 19px;
+}
+.weibo {
+  background-image: url("weibo.png");
+  left: 127px;
+  top: 90px;
+  width: 20px;
+  height: 16px;
+}
+.people {
+  background-image: url("people.png");
+  left: 148px;
+  top: 90px;
+  width: 11px;
+  height: 11px;
+}
+.right {
+  background-image: url("right.png");
+  left: 160px;
+  top: 90px;
+  width: 11px;
+  height: 9px;
+}
+.close {
+  background-image: url("close.png");
+  left: 172px;
+  top: 90px;
+  width: 9px;
+  height: 9px;
+}
+.cloud_course_little {
+  background-image: url("cloud course little.png");
+  left: 182px;
+  top: 90px;
+  width: 13px;
+  height: 13px;
+}
+.follow {
+  background-image: url("follow.png");
+  left: 196px;
+  top: 90px;
+  width: 8px;
+  height: 8px;
+}
+.circle_play {
+  background-image: url("circle play.png");
+  left: 189px;
+  top: 104px;
+  width: 46px;
+  height: 46px;
+}
+.rentangle_play {
+  background-image: url("rentangle play.png");
+  left: 236px;
+  top: 90px;
+  width: 60px;
+  height: 60px;
+}
+.mooc {
+  background-image: url("mooc.png");
+  left: 1px;
+  top: 151px;
+  width: 80px;
+  height: 80px;
+}
+.cloud {
+  background-image: url("cloud.png");
+  left: 82px;
+  top: 151px;
+  width: 80px;
+  height: 80px;
+}
+.open {
+  background-image: url("open.png");
+  left: 163px;
+  top: 151px;
+  width: 80px;
+  height: 80px;
+}

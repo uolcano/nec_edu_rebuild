@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <base href="" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="author" content="UolCano">
+    <meta name="keywords" content="优质课程、智能问答、趣味实践、随心笔记、教育、网易公开课、计算机开发、交互视觉设计、视频教程、交流互动、免费、名师、实用、培训">
+    <meta name="description" content="网易教育产品部是大型在线教育平台。">
+    <meta name="robots" content="index">
+    <title>网易教育产品部 - 优秀的实用技能学习平台</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/json2.js"></script>
+    <script src="scripts/md5.min.js"></script>
+    <script src="scripts/core.js"></script>
+    <style>
+    .login {display: block;}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- login form -->
+        <div class="login js-login">
+            <div class="login--mask viewport-mask"></div>
+            <iframe name="nonrefresh" frameborder="0" style="display:none;"></iframe>
+            <form class="login--form js-form" name="flogin" action="http://study.163.com/webDev/login.htm" target="nonrefresh" autocomplete="off">
+                <fieldset class="form--field">
+                    <legend class="form--title">登录网易云课堂</legend>
+                    <div class="form--tips js-form--tips">错误/信息提示</div>
+                    <div class="form--account" title="帐号: studyOnline">
+                        <input type="text" class="form--text js-form--text" id="uname" name="userName" placeholder="帐号" value="studyOnline">
+                        <label for="uname" class="form--placeholder">帐号</label>
+                    </div>
+                    <div class="form--password" title="密码: study.163.com">
+                        <input type="password" class="form--text js-form--text" id="password" name="password" placeholder="密码" value="study.163.com">
+                        <label for="password" class="form--placeholder">密码</label>
+                    </div>
+                    <button type="submit" class="form--submit icon icon--submit js-form--submit">登录</button>
+                </fieldset>
+                <a class="login--close icon icon--close js-form--close"></a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

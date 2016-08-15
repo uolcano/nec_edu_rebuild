@@ -1,0 +1,1546 @@
+/***************************************
+ *            Fonts load                *
+ ****************************************/
+@font-face {
+    font-family: "Gill Sans MT";
+    src: url(../fonts/Gill Sans MT Bold.ttf);
+}
+@font-face {
+    font-family: "Hiragino Sans GB";
+    src: url(../fonts/Hiragino Sans GB W3.ttf);
+}
+/****************************************
+ *         Simple Reused Units           *
+ ****************************************/
+/* clear float */
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+/* green link */
+.link-green,
+.link-green:visited {
+    color: #21a557;
+    text-decoration: none;
+}
+
+.link-green:hover {
+    text-decoration: underline;
+}
+
+.link-green:after {
+    content: ' >';
+    font-stretch: ultra-expanded;
+}
+
+/* centering block */
+.block-center {
+    width: 960px;
+    margin: 0 auto;
+    transition: width 1s ease;
+}
+
+/* <% need for IE compatible JS %> */
+@media screen and (min-width: 1205px) and (max-width: 1222px) {
+    /* to fix the impact of the vertical scroll-bar width */
+    .block-center {
+        width: 1188px;
+    }
+}
+
+/* <% need for IE compatible JS %> */
+@media screen and (min-width: 1222px) {
+    .block-center {
+        width: 1205px;
+    }
+}
+
+.beyond-center .outerwrapper {
+    height: 100%;
+    margin: 0 -50%;
+}
+
+.beyond-center .innerwrapper {
+    height: 100%;
+    margin: 0 auto;
+}
+/* [end] centering block */
+
+
+/* netease edu LOGO */
+.logo {
+    font: 22px 'Hiragino Sans GB', sans-serif;
+    color: #39a030;
+}
+
+.logo--abbr {
+    font: 28px 'Gill Sans MT', sans-serif;
+    vertical-align: -5%;
+}
+
+.logo--sep {
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    margin: 0 13px 0 10px;
+    background: #39a030;
+}
+
+/* viewport mask */
+.viewport-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: #000;
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+
+/****************************************
+ *        Icon collection               *
+ ****************************************/
+.icon {
+    display: inline-block;
+    background-image: url(../images/sprites.png);
+}
+
+.icon--follow {
+    width: 8px;
+    height: 8px;
+    background-position: -196px -90px;
+}
+
+.icon--followed {
+    width: 11px;
+    height: 11px;
+    background-position: -160px -90px;
+}
+
+.icon--search {
+    width: 19px;
+    height: 19px;
+    margin: 35px 0 0 20px;
+    background-position: -107px -90px;
+}
+
+.icon--search:hover {
+    background-position: -87px -90px;
+}
+
+.icon--opencourse {
+    width: 80px;
+    height: 80px;
+    background-position: -1px -151px;
+}
+
+.icon--cloudclass {
+    width: 80px;
+    height: 80px;
+    background-position: -82px -151px;
+}
+
+.icon--cloudclass-lti {
+    width: 13px;
+    height: 13px;
+    background-position: -182px -90px;
+}
+
+.icon--cnmooc {
+    width: 80px;
+    height: 80px;
+    background-position: -163px -151px;
+}
+
+.icon--submit {
+    width: 295px;
+    height: 48px;
+    background-position: -1px 0;
+}
+
+.icon--close {
+    width: 23px;
+    height: 22px;
+    background-position: -1px -90px;
+}
+
+.icon--close-lti {
+    width: 9px;
+    height: 9px;
+    background-position: -172px -90px;
+}
+
+.icon--play-circle {
+    width: 46px;
+    height: 46px;
+    background-position: -189px -104px;
+}
+
+.icon--play-rect {
+    width: 60px;
+    height: 60px;
+    background-position: -236px -90px;
+}
+
+.icon--weibo {
+    width: 20px;
+    height: 16px;
+    background-position: -127px -90px;
+}
+
+.icon--prev {
+    width: 30px;
+    height: 20px;
+    background-position: -25px -90px;
+}
+
+.icon--next {
+    width: 30px;
+    height: 20px;
+    background-position: -56px -90px;
+}
+
+/****************************************
+ *             Top bar                  *
+ ****************************************/
+.top-bar {
+    display: none;
+    padding: 1em 0;
+    background: #f3f3f3;
+}
+
+.top-bar--link {
+    margin-left: 1em;
+}
+
+.top-bar--close {
+    float: right;
+}
+
+.top-bar--close .icon {
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+/*********************************
+ *        Navigation bar         *
+ *********************************/
+[class^="nav-bar--"],
+[class^="nav-bar--"] * {
+    display: inline-block;
+}
+
+/* Top Logo */
+
+.nav-bar--logo {
+    float: left;
+    line-height: 88px;
+}
+
+.nav-bar--logo .logo--zh-text {
+    color: #333;
+}
+
+/* Follow button */
+.nav-bar--follow {
+    float: left;
+    font: 12px 'SimSun', serif;
+}
+
+.nav-bar--follow .tofollow {
+    height: 21px;
+    line-height: 21px;
+    margin: 33px 0 0 30px;
+    padding: 0 8px;
+    color: #fff;
+    background: #21a557;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.tofollow .icon {
+    margin-right: 5px;
+}
+
+.tofollow:hover {
+    color: #fff;
+    background: #2fb556;
+    box-shadow: 0 0 5px #aaa;
+}
+
+.nav-bar--follow .followed {
+    display: none;
+    margin: 33px 0 0 30px;
+    padding: 2px 4px;
+    background: #f8f8f8;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+}
+
+.followed .icon {
+    float: left;
+    margin: 3px 4px 0 0;
+}
+
+.followed--sep {
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background: #ccc;
+    vertical-align: -10%;
+    vertical-align: -20%\0;
+}
+
+.followed--unfollow {
+    color: #999;
+    text-decoration: none;
+}
+
+.followed--unfollow:hover {
+    color: #21a557;
+    text-decoration: underline;
+}
+
+.follow--count {
+    margin-left: 14px;
+    color: #666;
+}
+
+.follow--count:before {
+    content: '粉丝 ';
+}
+/* [end] Follow button */
+
+
+/* Top navigation list */
+.nav-bar--subnav {
+    float: right;
+    font: 16px/88px 'Hiragino Sans GB', sans-serif;
+    color: #666;
+}
+
+.subnav-item+.subnav-item {
+    margin-left: 55px;
+}
+
+.subnav-item a {
+    color: #666;
+    text-decoration: none;
+}
+
+.subnav-item a:hover {
+    color: #39a030;
+}
+
+/* Top search */
+.nav-bar--search {
+    float: right;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+/*************************************
+ *      Carousel Banner Pictures     *
+ *************************************/
+.carousel {
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+}
+
+.carousel .centerwrapper {
+    position: relative;
+    width: 1652px;
+}
+
+.carousel--slides {
+    position: relative;
+    height: 100%;
+}
+
+.carousel--slides .slide {
+    display: block;
+    position: absolute;
+    z-index: 10;
+}
+
+.carousel--indicators {
+    position: absolute;
+    width: 52px;
+    height: 0;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -26px;
+    z-index: 20;
+}
+
+.carousel--indicators .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator+.indicator {
+    margin-left: 11px;
+}
+
+.indicator.active {
+    background: #333;
+}
+
+
+/************************************
+ *        Education Products        *
+ ************************************/
+.product-info {
+    width: 100%;
+    margin: 60px 0;
+}
+
+.product-info .centerwrapper {
+    margin-left: -82px;
+}
+
+.product-info--item {
+    display: table-cell;
+    padding-left: 82px;
+}
+
+.product-info--icon {
+    float: left;
+    margin: 5px 20px 0 0;
+}
+
+.product-info--descript {
+    overflow: hidden;
+}
+
+.product-info .descript--title {
+    font-size: 22px;
+    font-weight: normal;
+    color: #333;
+}
+
+.product-info .descript--content {
+    margin: 21px 0 34px;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.product-info .descript--more {
+    font-size: 14px;
+    color: #39a030;
+}
+
+
+/****************************
+ *     Work Environment     *
+ ****************************/
+.work-env {
+    width: 100%;
+    height: 220px;
+    padding-bottom: 80px;
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+.work-env .centerwrapper {
+    width: 1616px;
+}
+
+.work-env--pic {
+    width: 320px;
+    height: 220px;
+}
+
+
+/*****************************
+ *      Course List          *
+ *****************************/
+.course--container {
+    background: #f8f8f8;
+}
+
+@media screen and (min-width:1205px) and (max-width: 1222px) {
+    .course--container .block-center {
+        width: 960px;
+    }
+}
+
+/* letter wrap ellipsis */
+.item--title,
+.item--category,
+.item--provider {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* item figure */
+.item--figure {
+    text-align: center;
+    overflow: hidden;
+}
+
+/* item learner symbel */
+.item--learn-count {
+    font-size: 12px;
+    color: #999;
+}
+
+.item--learn-count .icon {
+    margin-right: 5px;
+}
+
+.icon--human {
+    width: 11px;
+    height: 11px;
+    background-position: -148px -90px;
+}
+
+/* item currency symbel */
+.item--price.before:before {
+    content: '￥';
+}
+
+/* Course information main zone */
+.main-left {
+    float: left;
+    width: 735px;
+    transition: width 1s ease;
+}
+
+/* <% need for IE compatible JS %> */
+@media screen and (min-width: 1225px) {
+    /**************
+  fixe the resizing delay
+    ***************/
+    .main-left {
+        width: 980px;
+    }
+}
+
+/* Category Tab */
+.course--category {
+    margin-bottom: 29px;
+}
+
+.course--category .tab {
+    float: left;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    color: #666;
+    background: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #d4d3d3;
+    box-shadow: 1px 1px 1px 0 #d4d3d3;
+    cursor: pointer;
+}
+
+.course--category .tab.active {
+    color: #fff;
+    background: #39a030;
+    border: none;
+}
+
+/* Course List */
+.course--list {
+    display: block;
+    width: 100%;
+    margin: -10px;
+}
+
+/* Course Card */
+.course--item {
+    display: block;
+    float: left;
+    width: 225px;
+    height: 228px;
+    margin: 10px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.course--item .wrapper {
+    padding: 0 5px;
+}
+
+.course--item .wrapper > * {
+    margin-top: 10px;
+}
+
+.course--item .item--figure {
+    width: 223px;
+    height: 124px;
+    margin: 1px 0 0 -4px;
+    line-height: 124px;
+}
+
+.course--item .item--title {
+    font-weight: 400;
+}
+
+.course--item .item--category {
+    color: #999;
+}
+
+.course--item .item--learn-count {
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.course--item .item--price {
+    color: #ff3f00;
+}
+
+.course--item .item--provider {
+    display: none;
+    margin: 13px 0 0 4px;
+}
+
+.course--item .item--descript {
+    display: none;
+}
+/* [end] Course Card */
+
+/* hover activate floating layer */
+.course--item:hover .wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: 481px;
+    min-height: 238px;
+    margin: -10px 0 -100px -10px;
+    padding: 0;
+    z-index: 10;
+    letter-spacing: 1px;
+    color: #666;
+    background: #fff;
+    border: 1px solid #d4d3d3;
+    box-shadow: 1px 1px 5px 0 #999;
+}
+
+.course--item:hover .item--figure {
+    float: left;
+    margin: 10px 20px 0 10px;
+}
+
+.course--item:hover .item--title {
+    margin: 15px 10px 0 0;
+    font-size: 18px;
+}
+
+.course--item:hover .item--category {
+    position: absolute;
+    top: 87px;
+    left: 252px;
+    color: #666;
+}
+
+.course--item:hover .item--category:before {
+    content: '分类：';
+}
+
+.course--item:hover .item--learn-count {
+    padding-left: 0;
+    color: #666;
+    border: none;
+}
+
+.course--item:hover .item--learn-count:after {
+    content: '人在学';
+}
+
+.course--item:hover .item--price {
+    display: none;
+}
+
+.course--item:hover .item--provider {
+    display: block;
+}
+
+.course--item:hover .item--provider:before {
+    content: '发布者：';
+}
+
+.course--item:hover .item--descript {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 84px;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 21px;
+    font-size: 14px;
+    background: #f8f8f8;
+}
+/* [end] hover activate floating layer */
+/* [end] Course List */
+
+/* page picker */
+.pager {
+    float: right;
+    margin: 30px 20px 120px 0;
+}
+
+.pager>* {
+    height: 20px;
+}
+
+.pager--page {
+    width: 20px;
+    font-size: 14px;
+    background: #f8f8f8;
+    vertical-align: 34%;
+}
+
+/* to fix the firefox issue */
+@-moz-document url-prefix() {
+    .pager--page {
+        vertical-align: -45%;
+    }
+}
+
+.pager--page.active {
+    color: #39a030;
+    text-decoration: underline;
+}
+
+.pager--page:hover {
+    color: #fff;
+    background: #9dd8b1;
+}
+/* [end] page picker */
+/* [end] Course information main zone */
+
+
+/***********************************
+ *             side-bar            *
+ ***********************************/
+.side-right {
+    float: left;
+}
+
+.org-intro:hover,
+.hot-rank:hover {
+    box-sizing: border-box;
+    margin: 0 -1px -1px -1px;
+    border: 1px solid #d4d3d3;
+    border-top: none;
+    box-shadow: 1px 1px 3px 0 #d4d3d3;
+}
+
+.org-intro:hover {
+    margin-bottom: 19px;
+}
+
+.org-intro>*,
+.hot-rank>* {
+    box-sizing: border-box;
+    width: 223px;
+    padding: 19px;
+    background: #fff;
+}
+
+.org-intro--title,
+.hot-rank--title {
+    height: 55px;
+    font-size: 16px;
+    border-bottom: 1px solid #d4d3d3;
+}
+
+/* orgnization introduction */
+.org-intro {
+    margin-bottom: 20px;
+}
+
+.detail--title {
+    font-size: 14px;
+}
+
+.detail--video {
+    position: relative;
+    width: 180px;
+    height: 110px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.detail--video .icon {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -23px 0 0 -23px;
+    cursor: pointer;
+}
+
+.detail--video:hover .icon {
+    display: block;
+}
+/* [end] orgnization introduction */
+
+/* hot course rank  */
+.hot-rank .wrapper {
+    height: 720px;
+}
+
+.hot-rank .clip {
+    height: 100%;
+    overflow: hidden;
+}
+
+.hot-rank--list {
+    position: relative;
+    top: 0;
+    margin-bottom: -20px;
+}
+
+.hot-rank--item {
+    margin-bottom: 20px;
+}
+
+.hot-rank--item .item--figure {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+}
+
+.hot-rank--item .item--figure>* {
+    width: 160%;
+    height: 100%;
+    margin: 0 -30px;
+}
+
+.hot-rank--item .item--title {
+    font-size: 14px;
+}
+
+.hot-rank--item .item--learn-count {
+    margin-top: 12px;
+}
+/* [end] hot course rank  */
+
+/**************************
+ * the footer information *
+ **************************/
+.footer {
+    height: 263px;
+    letter-spacing: 1px;
+    background: #2c3339;
+    color: #cfcfcf;
+}
+
+.footer a,
+.footer a:hover,
+.footer a:visited {
+    color: #cfcfcf;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 14.5px;
+    line-height: 2;
+}
+
+.footer span {
+    line-height: 2;
+}
+
+.footer--comp-info,
+.footer--link,
+.footer--contact,
+.footer--support {
+    float: left;
+    margin: 83px 0 23px 0;
+    font-size: 12.5px;
+}
+
+.footer .wrapper {
+    padding: 0;
+    transition: padding 1s ease;
+}
+
+.footer .wrapper > * {
+    padding-right: 70px;
+    transition: padding-right 1s ease;
+}
+
+/* <% need for IE compatible JS %> */
+@media screen and (min-width: 1205px) {
+    .footer .wrapper {
+        padding: 0 50px;
+    }
+    .footer .wrapper > * {
+        padding-right: 100px;
+    }
+}
+
+.comp-record p {
+    font-size: 12.5px;
+}
+
+.footer--contact .icon {
+    margin-left: 10px;
+    vertical-align: sub;
+}
+
+.about-page>* {
+    margin-left: 100px;
+}
+/* [end] the footer information */
+
+/*************************************
+ *            Form Login             *
+ *************************************/
+.login {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    z-index: 25;
+}
+
+/* the login form */
+.login--form {
+    position: relative;
+    width: 387px;
+    height: 288px;
+    margin: -144px 0 0 -193px;
+    padding: 30px 0 0 40px;
+    box-sizing: border-box;
+    z-index: 30;
+    background: #fff;
+}
+
+.form--title {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form--tips {
+    visibility: hidden;
+    margin: 5px;
+    color: #f00;
+    transition: 1s;
+}
+
+.form--account,
+.form--password {
+    position: relative;
+}
+
+.form--text {
+    width: 293px;
+    height: 43px;
+    margin-bottom: 15px;
+    padding: 9px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fafafa;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    box-shadow: inset 3px 3px 3px 0 #f1f1f1;
+    transition: 1s ease;
+}
+
+/* input status border */
+.form--text:focus {
+    border-color: #88f;
+    box-shadow: inset 3px 3px 3px 0 #f1f1f1, 0 0 5px #88f;
+}
+
+.form--text.success {
+    border-color: #9e9;
+    box-shadow: inset 3px 3px 3px 0 #f1f1f1, 0 0 5px #9e9;
+}
+
+.form--text.danger {
+    border-color: #f88;
+    box-shadow: inset 3px 3px 3px 0 #f1f1f1, 0 0 5px #f88;
+}
+
+/* fix IE8/9 placeholder */
+.form--text {
+    padding-top: 13px\0;
+}
+
+.form--placeholder {
+    visibility: hidden;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #bbb;
+}
+
+.form--placeholder {
+    visibility: visible\0;
+}
+
+.form--text:focus + .form--placeholder {
+    visibility: hidden\0;
+}
+
+/* submit form */
+.form--submit {
+    margin-top: 11px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    transition: 1s ease;
+}
+
+.form--submit:active {
+    color: #cfcfcf;
+}
+
+.form--submit.disabled {
+    background: #afafaf;
+}
+/* [end] the login form */
+
+/* close the login window */
+.login--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/************************************
+ *          Video
+ ************************************/
+.video {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+/* video view window */
+.video--window {
+    display: block;
+    position: relative;
+    width: 890px;
+    height: 616px;
+    margin: -338px 0 0 -475px;
+    padding: 30px;
+    z-index: 35;
+    background: #fff;
+}
+
+.video--title {
+    margin-bottom: 22px;
+    font-size: 18px;
+}
+
+/* the source video */
+.video--primary {
+    display: block;
+    position: relative;
+    min-width: 890px;
+    min-height: 567px;
+    max-width: 100%;
+    max-height: 98%;
+    background-color: #000;
+}
+
+.ie-not-support {
+    /* fix the non-support of IE8 */
+    display: block;
+    position: absolute;
+    width: 890px;
+    height: 567px;
+    font-size: 20px;
+    line-height: 567px;
+    text-align: center;
+    color: #bbb;
+    background-color: #000;
+    filter: alpha(opacity=70);
+}
+
+/* the video control set */
+.video--controls {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    bottom: 30px;
+    background: #000 url(../images/sprites.png) repeat-x -1px -49px;
+    transition: 1s linear;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.video--controls>* {
+    width: 100%;
+}
+
+.video--controls * {
+    display: inline-block;
+    color: #999;
+}
+
+/* rectangle play button */
+.video--play {
+    display: none;
+}
+
+.video--play.paused {
+    display: block;
+    position: relative;
+    top: -150px;
+    left: 30px;
+    border-radius: 6px;
+    background-color: #000;
+}
+
+/* close the video window */
+.video--close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    border: none;
+}
+
+/* setting options */
+.play-btn,
+.time-pass {
+    float: left;
+}
+
+.brand,
+.fullscreen,
+.resolution,
+.sound-control,
+.play-status {
+    box-sizing: border-box;
+    float: right;
+}
+
+.draggable {
+    box-sizing: content-box;
+}
+
+
+/* the play and pause button */
+.play-btn {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border-right: 1px solid #292929;
+    cursor: pointer;
+}
+
+.play-btn .play-icon {
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+}
+
+.play-btn .play-icon {
+    border-left: 5px solid #999;
+    border-right: 5px solid #999;
+}
+
+.play-btn.paused .play-icon {
+    border-top: 7px solid transparent;
+    border-left: 14px solid #999;
+    border-right: none;
+    border-bottom: 7px solid transparent;
+}
+
+/* [end] the play and pause button */
+
+/* the timer of video */
+.time-pass {
+    padding: 0 10px;
+    color: #999;
+    border-left: 1px solid #2e2e2e;
+    line-height: 30px;
+}
+
+/* the netease cloud class brand */
+.brand {
+    margin-right: 14px;
+    padding-left: 10px;
+    border-left: 1px solid #2e2e2e;
+    height: 30px;
+    color: #ececec;
+    text-decoration: none;
+}
+
+.brand .icon {
+    vertical-align: middle;
+    margin: 10px 3px;
+}
+
+/* fullscreen the video */
+.fullscreen {
+    width: 40px;
+    height: 30px;
+    border-right: 1px solid #292929;
+    cursor: pointer;
+}
+
+/* fullscreen simulated icon */
+.fullscreen .full-icon {
+    position: relative;
+    box-sizing: border-box;
+    width: 18px;
+    height: 14px;
+    margin: 8px 11px;
+    overflow: hidden;
+}
+
+.full-icon .corner {
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 7px;
+    height: 5px;
+}
+
+.corner:nth-child(odd) {
+    left: 0;
+    border-left: 2px solid #666;
+}
+
+.corner:nth-child(even) {
+    right: 0;
+    border-right: 2px solid #666;
+}
+
+.corner:nth-child(1),
+.corner:nth-child(2) {
+    top: 0;
+    border-top: 2px solid #666;
+}
+
+.corner:nth-child(3),
+.corner:nth-child(4) {
+    bottom: 0;
+    border-bottom: 2px solid #666;
+}
+
+.fullscreen:hover .corner {
+    border-color: #999;
+}
+
+.fullscreen:hover .full-icon {
+    animation: tofull steps(4, end) 2s infinite;
+}
+
+@keyframes tofull {
+    0% {
+        width: 18px;
+        height: 14px;
+        margin: 8px 11px;
+    }
+    100% {
+        width: 30px;
+        height: 24px;
+        margin: 4px 6px;
+    }
+}
+
+/* change style when screenfulled */
+.screenfulled:hover .full-icon {
+    animation: none;
+}
+
+.screenfulled .corner:nth-child(odd) {
+    left: auto;
+    right: 0;
+}
+
+.screenfulled .corner:nth-child(even) {
+    right: auto;
+    left: 0;
+}
+
+.screenfulled .corner:nth-child(1),
+.screenfulled .corner:nth-child(2) {
+    top: auto;
+    bottom: 0;
+}
+
+.screenfulled .corner:nth-child(3),
+.screenfulled .corner:nth-child(4) {
+    bottom: auto;
+    top: 0;
+}
+/* [end] fullscreen simulated icon */
+
+.video--window.screenfulled {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 40;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.screenfulled .video--title {
+    display: none;
+}
+
+.screenfulled .video--primary {
+    margin: 0 auto;
+}
+
+.screenfulled .video--close {
+    opacity: .2;
+}
+
+.screenfulled .video--close:hover {
+    opacity: 1;
+}
+/* [end] fullscreen the video */
+
+/* resolution */
+.resolution {
+    height: 18px;
+    padding: 0 1px;
+    border: 2px solid #444;
+    color: #666;
+    margin: 6px 0 0 0;
+    cursor: pointer;
+}
+
+.resolution:hover {
+    color: #999;
+    border-color: #999;
+}
+
+/* the sound control */
+.sound-control {
+    position: relative;
+    box-sizing: border-box;
+    width: 50px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+/* sound simulated icons */
+.sound-icon {
+    position: absolute;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    left: 15px;
+    z-index: 99;
+}
+
+.sound-icon * {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+.loudspeaker {
+    width: 8px;
+    height: 18px;
+    top: 5px;
+    left: 3px;
+    border-top: 6px solid transparent;
+    border-right: 8px solid #999;
+    border-bottom: 6px solid transparent;
+    border-left: 0 solid;
+}
+
+.loudspeaker:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 4px;
+    height: 8px;
+    top: -8px;
+    top: -7px\0;
+    left: -3px;
+    border: 3px solid #999;
+}
+
+/* to fix firefox position */
+@-moz-document url-prefix() {
+    .loudspeaker:before{
+        top: -7px;
+    }
+}
+
+.sound-wave1 {
+    visibility: hidden;
+    width: 4px;
+    height: 8px;
+    top: -2.1px;
+    left: -3px;
+    border-radius: 0 5px 5px 0/0 10px 10px 0;
+    box-shadow: 2px 0 0 0 #999;
+}
+
+.sound-wave2 {
+    visibility: hidden;
+    width: 4px;
+    height: 16px;
+    top: 1.6px;
+    left: -7px;
+    border-radius: 0 5px 5px 0/ 0 10px 10px 0;
+    box-shadow: 2px 0 0 0 #999;
+}
+
+.sound-control.muted .loudspeaker:after {
+    content: '/';
+    display: inline-block;
+    visibility: visible;
+    position: relative;
+    width: 24px;
+    height: 18px;
+    top: -27px;
+    left: -9px;
+    font: oblique bold 18px/1 monospace;
+    color: #ccc;
+}
+
+/* to fix firefox position */
+@-moz-document url-prefix() {
+    .sound-control.muted .loudspeaker:after{
+        top: -25px;
+        left: -11px;
+    }
+}
+
+.sound-control.lowvoice .sound-wave1,
+.sound-control.loudvoice .sound-wave1,
+.sound-control.loudvoice .sound-wave2 {
+    visibility: visible;
+}
+/* [end] sound simulated icons */
+
+/* the sound volume bar */
+.sound-bar {
+    position: relative;
+    width: 18px;
+    height: 0;
+    top: -15px;
+    opacity: 0;
+    border: 2px solid #888;
+    border-top-width: 8px;
+    overflow: hidden;
+    background-color: #666;
+    transition: opacity 1s;
+    z-index: 40;
+}
+
+.sound-control:hover .sound-bar {
+    opacity: 1;
+    /* to fix the bar still hiden at the video zone */
+    height: 100px;
+    top: -110px;
+}
+
+.volume {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    top: 100px;
+    left: 0;
+    background-color: #fa7;
+}
+
+.volume .pointer {
+    width: 100%;
+    height: 4px;
+    margin: -2px 0;
+    background-color: #0fa;
+}
+
+.pointer {
+    float: right;
+}
+/* [end] the sound control */
+
+/* playing status of video */
+.play-status {
+    box-sizing: border-box;
+    width: 200px;
+    height: 30px;
+    padding: 8px;
+    text-align: center;
+}
+/* [end] setting options */
+
+/* progress bar */
+.progress-bar {
+    position: relative;
+    height: 10px;
+    top: -2px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.progress-bar>* {
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+
+/* the video cache */
+.cache {
+    width: 0;
+    background-color: #555;
+}
+
+/* video current progress */
+.progress {
+    width: 0;
+    background-color: #00a750;
+}
+
+.progress .pointer {
+    width: 10px;
+    height: 10px;
+    margin: 0 -5px;
+    border-radius: 50%;
+    /* box-shadow: inset -1px 1px 2px #fff, -1px 1px 3px 0 #000; */
+    background-color: #ccc;
+    cursor: pointer;
+}
+/* [end] progress bar */
+/* [end] the video control set */
