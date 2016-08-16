@@ -16,6 +16,6 @@ This repo is a rebuilt little project to the passed internet course, added some 
 - ARIA, e.g. role, tabindex
 
 # Archive
-The old version: https://github.com/uolcano/necc\_final\_proj
+The old version: https://github.com/uolcano/necc_final_proj
 
 Thanks to: https://github.com/xiaotian777/netease-edu
