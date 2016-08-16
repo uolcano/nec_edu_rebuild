@@ -886,9 +886,9 @@ usage: $.temp.drag.enable();  // enable progress or volume drag
             pgrs = dragging.querySelector('.progress');
         } else if (dragging.className.indexOf('sound-bar') > -1) {
             vlm = dragging.querySelector('.volume');
+            $.temp.play();
         }
         offset = $.dom.getOffset(dragging);
-        $.temp.play();
     });
     drag.add('drag', function (event) {
         var width, height, top;
@@ -922,9 +922,9 @@ usage: $.temp.drag.enable();  // enable progress or volume drag
                 vlm.style.top = (top < 0 ? 0 : (top > 100 ? 100 : top)) + 'px';
                 video.volume = height / 100;
                 video.muted && (video.muted = false);
+                $.temp.play();
             }
             dragging = pgrs = vlm = null;
-            $.temp.play();
         }
     });
     $.temp.drag = drag;
