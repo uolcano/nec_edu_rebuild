@@ -884,9 +884,9 @@ usage: $.temp.drag.enable();  // enable progress or volume drag
         dragging = target;
         if (dragging.className.indexOf('progress-bar') > -1) {
             pgrs = dragging.querySelector('.progress');
+            $.temp.play();
         } else if (dragging.className.indexOf('sound-bar') > -1) {
             vlm = dragging.querySelector('.volume');
-            $.temp.play();
         }
         offset = $.dom.getOffset(dragging);
     });
@@ -913,6 +913,7 @@ usage: $.temp.drag.enable();  // enable progress or volume drag
                 pgrs.style.width = width + 'px';
                 // seeked at the dragend point to change the video current time
                 video.currentTime = width * video.duration / dragging.clientWidth;
+                $.temp.play();
             } else if (vlm) {
                 height = offset.top + offset.height - event.clientY;
                 top = event.clientY - offset.top;
@@ -922,7 +923,6 @@ usage: $.temp.drag.enable();  // enable progress or volume drag
                 vlm.style.top = (top < 0 ? 0 : (top > 100 ? 100 : top)) + 'px';
                 video.volume = height / 100;
                 video.muted && (video.muted = false);
-                $.temp.play();
             }
             dragging = pgrs = vlm = null;
         }
