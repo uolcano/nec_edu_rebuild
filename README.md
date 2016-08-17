@@ -3,7 +3,7 @@ This repo is a rebuilt little project to the passed internet course, added some 
 - jQuery-like compatible encapsulation, and namespace control
 - Performance optimization, e.g. event throttle, array chunk, lazy load, asynchronously load
 - Promise, e.g. then, done
-- Advanced tempalte parser
+- Advanced template parser
 - More robust CORS Ajax
 - More reliable carousel control
 - Much mooth and extensible animate
