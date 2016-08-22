@@ -16,9 +16,11 @@ This repo is a rebuilt little project to the passed internet course, added some 
 - ARIA, e.g. role, tabindex
 
 # Archive
-The old version: https://github.com/uolcano/necc_final_proj
+The current version: http://uolcano.github.io/projdemos/nec_edu_rebuild/
 
-Thanks to: https://github.com/xiaotian777/netease-edu
+The old version: https://github.com/uolcano/necc_final_proj/
+
+Thanks to: https://github.com/xiaotian777/netease-edu/
 
 # Something to say
 For the server API unchanged, I'd have to deploy the site address under another site on GitHub Page. Since GitHub Page supports HTTPS on June 16 2016, thus I can not use the HTTP uri to get cross site resource. I've written a [blog](http://uolcano.github.io/blog/2016/08/16/How-to-fallback-https-to-http-on-GitHub-Pages/) about it.
